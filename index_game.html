@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fantasy Quest Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Fantasy Quest Generator 🐉</h1>
+        <form id="questForm" method="POST" action="/generate">
+            <textarea name="prompt" placeholder="Speak thy quest or whisper a theme..." rows="4">{{ prompt or '' }}</textarea>
+            <button type="submit">Summon Quest</button>
+        </form>
+
+        {% if output %}
+        <div class="output-box">
+            {{ output }}
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        const images = [
+            "{{ url_for('static', filename='backgrounds/artwork-fantasy-art-digital-art-forest-wallpaper-preview.jpg') }}",
+            "{{ url_for('static', filename='backgrounds/fantasy-endless-hole-landscape_23-2151639696.avif') }}",
+            "{{ url_for('static', filename='backgrounds/fantasy-landscape-wallpaper-preview.jpg') }}"
+        ];
+
+        let currentIndex = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        changeBackground(); 
+        setInterval(changeBackground, 8000); 
+    </script>
+</body>
+</html>
