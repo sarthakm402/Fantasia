@@ -4,8 +4,23 @@
 A fun and immersive fantasy quest generator powered by a fine-tuned `gpt2-fantasy-raw` model. Built with a medieval-themed UI, this web app lets users input a fantasy prompt and generates detailed quest lines styled like an epic tale.
 
 > ⚔️ *"Rescue the princess from the fire temple... A forgotten legend resurfaces..."*
+ ---
+## 🔮 How It Works
 
----
+- **Input**: A short fantasy-themed prompt (e.g., "Slay the ice dragon in the north")
+- **Output**: A rich, story-like quest generated using GPT-2 fine-tuned on fantasy data
+
+Example:
+
+
+🧑‍🌾 Input:
+Rescue the princess from the fire temple volcanic island ruled by flame spirits
+
+🧝‍♂️ Output:
+Rescue the princess from the fire temple volcanic island ruled by flame spirits a volcanic legend resurfaces...
+
+
+
 
 ## 🗂️ Project Structure
 
@@ -56,6 +71,15 @@ fantasy-quest-generator/
 
 ---
 
+## 📚 Dataset & Training
+
+- Created a **custom fantasy quest dataset** with over 500+ labeled prompts and quest completions.
+- Preprocessed and tokenized with `GPT2Tokenizer`.
+- Fine-tuned GPT-2 (`gpt2`) using PyTorch and HuggingFace Transformers.
+- Used:
+  - Fantasy-style structure (quest name + description + choice events)
+  - Manual curation 
+
 ## 🚀 Running Locally
 
 ```bash
@@ -78,6 +102,21 @@ python app.py
 > Output: *"A forgotten legend resurfaces, speaking of a hero’s return… The Princess from the fire temple... Betrayal lurks in the shadows..."*
 
 ---
+## Improvements (Future Work)
+Add character creation and background story to link them with quest
+
+Enhance quest branching logic (multi-step outcomes)
+
+Integrate voice generation (TTS) for narration
+
+Add Dark/Light modes for different fantasy themes
+
+Optimize generation using LoRA or QLoRA for smaller models
+
+Containerize with Docker for easier deployment
+
+Adding  more data for better finetuning.
+
 
 ## 📬 Contact
 
