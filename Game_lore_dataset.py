@@ -1,7 +1,7 @@
 from datasets import load_dataset
 import json
 import re
-import random
+import random 
 #first we load dataset 
 #then we sort the fantasy ones using keywords  
 # dataset = load_dataset("euclaise/writingprompts", split="train")
