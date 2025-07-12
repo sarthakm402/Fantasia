@@ -3,7 +3,7 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel
 from flask import Flask, render_template, request
 import time
 from datetime import datetime
-
+ 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = GPT2LMHeadModel.from_pretrained("gpt2-fantasy-raw")
 tokenizer = GPT2Tokenizer.from_pretrained("gpt2-fantasy-raw")
