@@ -1,7 +1,7 @@
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 from flask import Flask, render_template, request
-import time
+import time 
 from datetime import datetime
  
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
